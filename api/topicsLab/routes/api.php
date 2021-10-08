@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return User::with('topics', 'comments')->find($request->user()->id);
+    return $request->user();
 });
 
 Route::post('/login', [
